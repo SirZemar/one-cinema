@@ -6,8 +6,8 @@ type Props = {
     image: string;
     title: string;
     text: string;
-}
-const HeroImage: React.FC<Props> = ({image, title, text}) => (
+};
+const HeroImage: React.FC<Props> = ({ image, title, text }) => (
     <Wrapper image={image}>
         <Content>
             <Text>

@@ -5,6 +5,7 @@ const Wrapper = styled.div`
     align-items: center;
     min-height: 100px;
     background: var(--darkGrey);
+    padding: 0 20px;
 `;
 
 const Content = styled.div`

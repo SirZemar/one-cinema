@@ -5,15 +5,15 @@ type Props = {
 }
 
 const Wrapper = styled.div<Props>`
-background: linear-gradient(
-    to bottom, rgba(0,0,0,0)
-    41%, rgba(0,0,0,0.65)
-), url(${({image}) => image}), var(--darkGrey);
-background-size: 100%, cover;
-background-position: center;
-height: 600px;
-position: relative;
-animation: animateHeroImage 1s;
+    background: linear-gradient(
+        to bottom, rgba(0,0,0,0)
+        41%, rgba(0,0,0,0.65)
+    ), url(${({ image }) => image}), var(--darkGrey);
+    background-size: 100%, cover;
+    background-position: center;
+    height: 600px;
+    position: relative;
+    animation: animateHeroImage 1s;
 
 @keyframes animateHeroImage {
     from {
@@ -26,10 +26,9 @@ animation: animateHeroImage 1s;
 `;
 
 const Content = styled.div`
-padding: 20px;
-max-width: var(--maxWidth);
-margin: 0 auto;
-
+    padding: 20px;
+    max-width: var(--maxWidth);
+    margin: 0 auto;
 `;
 
 const Text = styled.div`
