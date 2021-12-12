@@ -29,6 +29,7 @@ export type Movie = {
   budget: number;
   runtime: number;
   revenue: number;
+  release_date: string;
 };
 export type Movies = {
   page: number;
