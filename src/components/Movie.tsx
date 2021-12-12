@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router";
 // Config
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";

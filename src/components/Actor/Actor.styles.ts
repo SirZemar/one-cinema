@@ -11,6 +11,7 @@ const Wrapper = styled.div`
     padding: 5px;
     text-align: center;
     height: 280px;
+    overflow: hidden;
 
     h3 {
         margin: 10px 0 0 0;
@@ -25,7 +26,6 @@ const Wrapper = styled.div`
 const Image = styled.img<Props>`
     display: block;
     width: 100%;
-    height: 200px;
     object-fit: cover;
     border-radius: 15px;
     transition: 0.2s;
