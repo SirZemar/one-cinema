@@ -10,7 +10,7 @@ import Thumb from './Thumb';
 import Spinner from './Spinner';
 import SearchBar from './SearchBar';
 import Button from './Button';
-
+import LoginBackground from './LoginBackground';
 // Hook
 import { useHomeFetch } from '../hooks/useHomeFetch';
 
@@ -33,6 +33,7 @@ const Home: React.FC = () => {
 
     return (
         <>
+        <LoginBackground />
             {!searchTerm && firstResult ?
                 <HeroImage
                     image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${firstResult.backdrop_path}`}

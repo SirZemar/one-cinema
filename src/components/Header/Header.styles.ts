@@ -8,10 +8,11 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
     max-width: var(--maxWidth);
     padding: 20px 0;
     margin: 0 auto;
+    color: var(--white);
+    }
 `;
 
 export const LogoImg = styled.img`
@@ -21,6 +22,7 @@ export const LogoImg = styled.img`
         width:  150px;
     }
 `;
+
 
 export const TMDBLogoImg = styled.img`
     width: 100px;
