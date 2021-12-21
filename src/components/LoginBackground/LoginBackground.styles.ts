@@ -6,7 +6,7 @@ const Wrapper = styled.div`
     height: 100%;
     top: 0;
     z-index: 100;
-    background: rgba(20,20,20,0.5);
+    background: rgba(20,20,20,0.8);
     overflow: hidden;
     `;
 

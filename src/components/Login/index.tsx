@@ -4,10 +4,9 @@ import API from '../../API';
 // Components
 import Button from "../Button";
 // Styles
-import { Wrapper } from "./Login.styles";
+import { Wrapper, Content } from "./Login.styles";
 // Context 
 import { Context } from '../../context';
-import { Content } from "../Header/Header.styles";
 
 const Login: React.FC = () => {
 
@@ -27,7 +26,6 @@ const Login: React.FC = () => {
                 username,
                 password
             );
-            console.log(sessionId);
 
             setUser({ sessionId: sessionId.session_id, username });
 
@@ -46,6 +44,7 @@ const Login: React.FC = () => {
     };
     return (
         <Wrapper>
+            <Content>
                 {error && <div className="error">Invalid user</div>}
                 <label>Username</label>
                 <input
@@ -53,6 +52,7 @@ const Login: React.FC = () => {
                     value={username}
                     name='username'
                     onChange={handleInput}
+                    autoComplete='off'
                 />
                 <label>Password</label>
                 <input
@@ -62,6 +62,7 @@ const Login: React.FC = () => {
                     onChange={handleInput}
                 />
                 <Button text='Login' callback={handleSubmit} />
+            </Content>
         </Wrapper>
     )
 };

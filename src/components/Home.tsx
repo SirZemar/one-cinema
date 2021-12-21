@@ -33,7 +33,7 @@ const Home: React.FC = () => {
 
     return (
         <>
-        <LoginBackground />
+            {true && <LoginBackground />}
             {!searchTerm && firstResult ?
                 <HeroImage
                     image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${firstResult.backdrop_path}`}

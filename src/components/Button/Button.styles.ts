@@ -8,7 +8,7 @@ const Wrapper = styled.button`
     height: 60px;
     border-radius: 30px;
     color: var(--white);
-    border: 0;
+    border: 1px solid var(--white);
     font-size: var(--fontBig);
     margin: 20px auto;
     transition: all 0.3s;
@@ -21,4 +21,4 @@ const Wrapper = styled.button`
 `;
 
 
-export {Wrapper};
+export { Wrapper };

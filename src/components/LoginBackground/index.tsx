@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 // Styles 
 import { Wrapper } from "./LoginBackground.styles";
 // Components
 import Login from "../Login";
 
+import { Context } from '../../context';
+
+
 const LoginBackground: React.FC = () => {
 
-    const [collapsed, setCollapsed] = useState(true);
+    const [user] = useContext(Context);
+
     return (
-        <Wrapper>
-            <Login />
-        </Wrapper>
+        <>
+            {!user &&
+                <Wrapper>
+                    <Login />
+                </Wrapper>
+            }
+        </>
+
     )
 };
 
