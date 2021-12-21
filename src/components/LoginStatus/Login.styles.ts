@@ -5,11 +5,16 @@ const Wrapper = styled.div`
     cursor: pointer;
     user-select: none;
 
-    :hover {
+    .login-status {
+        
+        :hover {
         color: var(--medGrey);
+        }
+
+        span {
+            padding: 0 10px;
+        }
     }
-    span {
-        padding: 0 10px;
     }
 `;
 
