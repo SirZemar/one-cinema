@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 // Styles
 import { Wrapper } from "./Login.styles";
 // Context
-import { Context, Test } from '../../context';
+import { Context } from '../../context';
 
 const LoginStatus: React.FC = () => {
     const [user] = useContext(Context);

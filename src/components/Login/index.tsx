@@ -15,6 +15,7 @@ const Login: React.FC = () => {
     const [error, setError] = useState(false);
 
     const [_user, setUser] = useContext(Context);
+
     const navigate = useNavigate();
 
     const handleSubmit = async () => {
@@ -40,7 +41,6 @@ const Login: React.FC = () => {
 
         if (name === 'username') setUsername(value);
         if (name === 'password') setPassword(value);
-
     };
     return (
         <Wrapper>
