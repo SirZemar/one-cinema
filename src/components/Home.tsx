@@ -10,7 +10,6 @@ import Thumb from './Thumb';
 import Spinner from './Spinner';
 import SearchBar from './SearchBar';
 import Button from './Button';
-import LoginBackground from './LoginBackground';
 // Hook
 import { useHomeFetch } from '../hooks/useHomeFetch';
 

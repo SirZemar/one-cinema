@@ -1,4 +1,4 @@
-import React, { useState, useContext, useCallback } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import API from '../../API';
 // Components
@@ -14,8 +14,8 @@ const Login: React.FC = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
 
-    const [user, setUser] = useContext(Context);
-
+    const [_user, setUser] = useContext(Context);
+   
     const navigate = useNavigate();
 
     const handleSubmit = async () => {
@@ -42,10 +42,12 @@ const Login: React.FC = () => {
         if (name === 'password') setPassword(value);
     };
 
+    // To avoid warnings ***
+    false ? console.log(_user) : console.log(null);
 
     return (
         <Wrapper className="login" >
-            <Content onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => e.key == 'Enter' ? handleSubmit() : null}>
+            <Content onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' ? handleSubmit() : null}>
                 {error && <div className="error">Invalid user</div>}
                 <label>Username</label>
                 <input
