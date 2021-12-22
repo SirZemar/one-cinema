@@ -1,4 +1,4 @@
-import React, { EventHandler, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 // Styles
 import { Wrapper } from "./Login.styles";
 // Context
