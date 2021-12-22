@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 // Styles 
 import { Wrapper } from "./LoginBackground.styles";
 // Components
-import Login from "../Login";
+import Login from "../LoginBox";
+// Context
+import { Context } from '../../context';
+
+type Props = {
+    onClick: Function;
+}
 
 
+const LoginBackground: React.FC<Props> = ({onClick}) => {
 
-const LoginBackground: React.FC = () => {
-
+    const [user] = useContext(Context);
 
     return (
         <>
-            <Wrapper>
+            {!user && <Wrapper onClick={(e) => onClick(e, e.target === e.currentTarget)}>
                 <Login />
-            </Wrapper>
+            </Wrapper>}
         </>
 
     )

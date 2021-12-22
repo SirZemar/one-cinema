@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     z-index: 100;
     background: rgba(20,20,20,0.8);
     overflow: hidden;
+    cursor: auto;
     `;
 
 export {

@@ -6,7 +6,7 @@ import TMDBLogo from '../../images/tmdb_logo.svg';
 // Styles
 import { Wrapper, Content, LogoImg, TMDBLogoImg } from './Header.styles';
 // Components
-import LoginStatus from '../LoginStatus';
+import LoginStatus from '../Login';
 
 const Header: React.FC = () => (
     <Wrapper>

@@ -7,8 +7,8 @@ type Props = {
     callback: () => void;
 }
 
-const Button: React.FC<Props> = ({ text, callback }) => (
-    <Wrapper type='button' onClick={callback}>
+const Button: React.FC<Props> = ({ text, callback}) => (
+    <Wrapper type='button' onClick={callback} >
         {text}
     </Wrapper>
 );
