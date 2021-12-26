@@ -6,15 +6,15 @@ import TMDBLogo from '../../images/tmdb_logo.svg';
 // Styles
 import { Wrapper, Content, LogoImg, TMDBLogoImg } from './Header.styles';
 // Components
-import LoginStatus from '../Login';
+import Login from '../Login';
 
 const Header: React.FC = () => (
     <Wrapper>
         <Content>
-            <Link to='/' style={{ textDecoration: 'none', flexGrow: '3'}}>
+            <Link to='/' style={{ textDecoration: 'none', flexGrow: '3' }}>
                 <LogoImg src={RMDBLogo} alt='rmdb-logo' />
             </Link>
-            <LoginStatus></LoginStatus>
+            <Login />
             <TMDBLogoImg src={TMDBLogo} alt='tmdb-logo' />
         </Content>
     </Wrapper>

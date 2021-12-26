@@ -6,6 +6,7 @@ const Wrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     height: 60%;
+    min-height: 500px;
     aspect-ratio: 1/1;
     background: rgba(0,0,0, 0.6);
     /* background: rgba(225,173,33,0.5); */
@@ -23,6 +24,10 @@ const Wrapper = styled.div`
         to {
             opacity: 1;
         }
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 110%;
     }
 `;
 
