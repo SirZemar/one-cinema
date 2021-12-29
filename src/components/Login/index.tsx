@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // Styles
 import { Wrapper } from "./Login.styles";
 // Context
@@ -6,9 +6,25 @@ import { Context } from '../../context';
 // Component
 import LoginBackground from "../LoginBackground";
 
+
 const LoginStatus: React.FC = () => {
     const [user] = useContext(Context);
     const [state, setState] = useState(false);
+    const [windowWidth, setWindowWidth] = useState<number>();
+
+    useEffect(() => {
+        const updateSize = () => {
+            const width = window.innerWidth;
+            if (width !== undefined) {
+                setWindowWidth(width);
+            }
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+
+        return () => window.removeEventListener('resize', updateSize);
+
+    }, [])
 
     const handleClick = (e: React.MouseEvent<HTMLElement>, outsideLoginBoxClick = false) => {
 
@@ -21,22 +37,17 @@ const LoginStatus: React.FC = () => {
 
     }
 
-    const handleKeyPress = (e: React.KeyboardEvent<HTMLElement>, escape = false) => {
-
-        return !user
-            ? escape ? setState(false) : null
-            : null
-    }
     return (
         <Wrapper >
-            <div className="login-status">
-                <span onClick={handleClick}>|||</span>
-                <span onClick={handleClick}> {user
-                    ? `Welcome ${user.username}`
+            <div className="login-status" >
+                <div className="text" onClick={handleClick}> {user
+                    ? typeof (windowWidth) != 'number' ? null : windowWidth <= 500
+                        ? user.username
+                        : `Welcome ${user.username}`
                     : 'Login'}
-                </span>
+                </div>
             </div>
-            {state && <LoginBackground onClick={handleClick} onKeyDown={handleKeyPress} />}
+            {state && <LoginBackground onClick={handleClick} state={state} setState={setState} />}
         </Wrapper>
     )
 };

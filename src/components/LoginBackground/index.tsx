@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // Styles 
 import { Wrapper } from "./LoginBackground.styles";
 // Components
@@ -8,17 +8,32 @@ import { Context } from '../../context';
 
 type Props = {
     onClick: Function;
-    onKeyDown: Function;
+    state: boolean;
+    setState: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 
-const LoginBackground: React.FC<Props> = ({ onClick, onKeyDown }) => {
+const LoginBackground: React.FC<Props> = ({ onClick, state, setState }) => {
 
     const [user] = useContext(Context);
 
+    useEffect(() => {
+        const loginBoxEscape = (e: any) => {
+            e.key === 'Escape'
+                ? setState(false)
+                : setState(state)
+        };
+        window.addEventListener('keydown', loginBoxEscape);
+        return () => {
+            window.removeEventListener('keydown', loginBoxEscape);
+
+        }
+
+    }, [state, setState])
+
     return (
         <>
-            {!user && <Wrapper onClick={(e) => onClick(e, e.target === e.currentTarget)} onKeyDown={(e) => onKeyDown(e, e.key === 'Escape')}>
+            {!user && state && <Wrapper onClick={(e) => onClick(e, e.target === e.currentTarget)} >
                 <LoginBox />
             </Wrapper>}
         </>
