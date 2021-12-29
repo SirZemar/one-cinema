@@ -21,7 +21,7 @@ const Wrapper = styled.div`
             text-overflow: ellipsis;
 
             :before {
-                content: '|||';
+                content: '||| ';
             }
         }
     }
