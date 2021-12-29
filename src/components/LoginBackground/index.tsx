@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 // Styles 
 import { Wrapper } from "./LoginBackground.styles";
 // Components
