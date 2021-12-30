@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+type Props = {
+    movieTitle: string;
+    actor: string | undefined;
+}
+const Wrapper = styled.div<Props>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,12 +21,18 @@ const Content = styled.div`
     padding: 0 20px;
     max-width: var(--maxWidth);
 
+    a:not(:first-child) {
+        span:not(.empty):before {
+            content: '| ';
+        }
+    }
     
     span {
         font-size: var(--fontMed);
         color: var(--white);
         padding-right: 10px;
 
+        
         @media screen and (max-width: 768px) {
             font-size: var(--fontSmall);
         }

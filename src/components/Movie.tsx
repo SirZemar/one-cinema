@@ -8,7 +8,7 @@ import Grid from "./Grid";
 import Spinner from "./Spinner";
 import MovieInfo from "./MovieInfo";
 import MovieInfoBar from "./MovieInfoBar";
-import Actor from "./Actor";
+import Actor from "./ActorCard";
 // Hook
 import { useMovieFetch } from "../hooks/useMovieFetch";
 
@@ -25,7 +25,7 @@ const Movie: React.FC = () => {
 
     return (
         <>
-            <BreadCrumb movieTitle={movie.original_title} />
+            <BreadCrumb movieTitle={movie.original_title} movieId={movieId} />
             <MovieInfo movie={movie} />
             <MovieInfoBar
                 time={movie.runtime}
@@ -43,6 +43,10 @@ const Movie: React.FC = () => {
                                 ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
                                 : NoImage
                         }
+                        clickable
+                        actorId={actor.id}
+                        movieTitle={movie.original_title}
+                        movieId={movieId}
                     />
                 ))}
             </Grid>
