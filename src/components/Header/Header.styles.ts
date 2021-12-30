@@ -56,11 +56,11 @@ const Logo = styled.div`
                 position: absolute;
                 bottom: -5px;
                 left: -3px;
-                height: 50px;
-                width: 50px;
+                height: 55px;
+                width: 55px;
                 z-index: -1;
                 background: var(--darkGrey);
-                mask-image: linear-gradient(135deg, rgba(0,0,0,1) 10%, rgba(255,255,255,0) 80%);
+                mask-image: linear-gradient(135deg, rgba(0,0,0,1) 25%, rgba(255,255,255,0) 80%);
             }
         }
 
@@ -70,7 +70,7 @@ const Logo = styled.div`
             left: 30px;
             width: 200px;
             height: 100%;
-
+            
             @media screen and (max-width: 500px) {
                 width:  150px;
             }
