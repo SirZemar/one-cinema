@@ -6,11 +6,14 @@ import { usePersonFetch } from "../hooks/usePersonFetch";
 import { IMAGE_BASE_URL } from "../config";
 // Components
 import BreadCrumb from "./BreadCrumb";
+import Spinner from "./Spinner";
 
 const Person: React.FC = () => {
     const { actorId, movieTitle, movieId }: any = useParams();
     const { state: person, loading, error }: any = usePersonFetch(actorId);
     console.log(loading, error)
+
+    if (loading) return <Spinner />
     return (
         <>
             <BreadCrumb movieTitle={movieTitle} movieId={movieId} actor={person.name} actorId={actorId} />

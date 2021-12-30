@@ -84,7 +84,7 @@ const apiSettings = {
     const creditsEndpoint: string = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
     return await (await fetch(creditsEndpoint)).json();
   },
-  fetchPerson: async (actorId: number): Promise<Person> => {
+  fetchPerson: async (actorId: string): Promise<Person> => {
     const endpoint: string = `${API_URL}person/${actorId}?api_key=${API_KEY}&language=en-US`;
     return await (await (await fetch(endpoint)).json());
   },
