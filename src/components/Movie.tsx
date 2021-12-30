@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router";
 // Config
-import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
+import { IMAGE_BASE_URL, PROFILE_SIZE } from "../config";
 // Components
 import BreadCrumb from "./BreadCrumb";
 import Grid from "./Grid";
@@ -40,7 +40,7 @@ const Movie: React.FC = () => {
                         character={actor.character}
                         imageUrl={
                             actor.profile_path
-                                ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
+                                ? `${IMAGE_BASE_URL}${PROFILE_SIZE}${actor.profile_path}`
                                 : NoImage
                         }
                         clickable

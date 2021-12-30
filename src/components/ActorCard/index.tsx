@@ -6,7 +6,7 @@ import { Wrapper, Image } from "./ActorCard.styles";
 // Types 
 type Props = {
     name: string;
-    character: string;
+    character: string | null;
     imageUrl: string;
     clickable: boolean;
     actorId: number;

@@ -12,6 +12,7 @@ const Wrapper = styled.div`
     text-align: center;
     height: 280px;
     overflow: hidden;
+    max-Width: 200px;
 
     h3 {
         margin: 10px 0 0 0;
