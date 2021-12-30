@@ -44,6 +44,17 @@ export type Cast = {
   credit_id: string;
   name: string;
   profile_path: string;
+  id: number;
+}
+
+export type Person = {
+  name: string;
+  birthday: string;
+  deathday: string | null;
+  biography: string;
+  place_of_birth: string | null;
+  homepage: null | string;
+  profile_path: string | null;
 }
 
 export type Crew = {
@@ -72,6 +83,10 @@ const apiSettings = {
   fetchCredits: async (movieId: string): Promise<Credits> => {
     const creditsEndpoint: string = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
     return await (await fetch(creditsEndpoint)).json();
+  },
+  fetchPerson: async (actorId: number): Promise<Person> => {
+    const endpoint: string = `${API_URL}person/${actorId}?api_key=${API_KEY}&language=en-US`;
+    return await (await (await fetch(endpoint)).json());
   },
   // Bonus material below for login
   getRequestToken: async () => {
