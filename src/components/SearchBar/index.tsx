@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // Image 
 import searchIcon from '../../images/search-icon.svg'
@@ -17,21 +17,21 @@ const SearchBar: React.FC<Props> = ({ setSearchTerm }) => {
 
     useEffect(() => {
 
-        if(initial.current) {
+        if (initial.current) {
             initial.current = false;
             return;
-        } 
+        }
         const timer = setTimeout(() => {
             setSearchTerm(state);
-        },500)
+        }, 500)
 
         return () => clearTimeout(timer)
-    },[setSearchTerm, state ])
+    }, [setSearchTerm, state])
     return (
         <Wrapper>
             <Content>
                 <img src={searchIcon} alt='search-icon' />
-                <input 
+                <input
                     type='text'
                     placeholder='Seach Movie'
                     onChange={event => setState(event.currentTarget.value)}

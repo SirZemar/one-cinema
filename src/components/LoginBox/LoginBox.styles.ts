@@ -11,9 +11,9 @@ const Wrapper = styled.div`
     background: rgba(0,0,0, 0.6);
     /* background: rgba(225,173,33,0.5); */
     /* border: 3px solid var(--medGrey); */
-    box-shadow: inset 0 0 5px 2px rgba(225,173,33, 0.5) ;
+    box-shadow: inset 0 0 5px 2px rgba(var(--primaryRGB), 0.5) ;
     border-radius: 20px;
-    border: 1px solid rgb(225,173,33);
+    border: 1px solid var(--primary);
     animation: animateLoginBox 0.5s;
 
     @keyframes animateLoginBox {

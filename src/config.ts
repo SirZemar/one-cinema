@@ -18,6 +18,7 @@ const IMAGE_BASE_URL: string = 'http://image.tmdb.org/t/p/';
 const BACKDROP_SIZE: string = 'w1280';
 // w92, w154, w185, w342, w500, w780, original
 const POSTER_SIZE: string = 'w780';
+const PROFILE_SIZE: string = 'w200';
 
 export {
   SEARCH_BASE_URL,
@@ -28,6 +29,7 @@ export {
   IMAGE_BASE_URL,
   BACKDROP_SIZE,
   POSTER_SIZE,
+  PROFILE_SIZE,
   REQUEST_TOKEN_URL,
   LOGIN_URL,
   SESSION_ID_URL,
