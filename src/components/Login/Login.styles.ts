@@ -5,11 +5,10 @@ const Wrapper = styled.div`
     cursor: pointer;
     user-select: none;
     margin: 0 10px;
-    max-width: 35%;
 
     .login-status {
-        height: 1rem ;
-        /* overflow: hidden; */
+        max-width: 250px;
+        margin-left: auto;
 
         :hover {
         color: var(--medGrey);
