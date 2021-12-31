@@ -26,6 +26,7 @@ const Logo = styled.div`
 
         @media screen and (max-width: 500px) {
             width: 55px;
+            margin-right: 50px;
         }
 
         .logo-image {
