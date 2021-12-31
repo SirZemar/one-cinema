@@ -22,11 +22,9 @@ const Logo = styled.div`
         z-index: 1;
         height: 50px;
         width: 200px;
-        margin-right: 100px;
 
         @media screen and (max-width: 500px) {
             width: 55px;
-            margin-right: 50px;
         }
 
         .logo-image {

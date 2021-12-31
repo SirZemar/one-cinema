@@ -11,7 +11,7 @@ import Login from '../Login';
 const Header: React.FC = () => (
     <Wrapper>
         <Content>
-            {<Link to='/' style={{ textDecoration: 'none' }}>
+            {<Link to='/' style={{ textDecoration: 'none', padding: '10px 0' }}>
                 <Logo>
                     <div className='logo-image'></div>
                     <img className='logo-text' src={LogoText} alt='one cinema' />

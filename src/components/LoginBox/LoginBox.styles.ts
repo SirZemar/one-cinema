@@ -9,8 +9,6 @@ const Wrapper = styled.div`
     min-height: 500px;
     aspect-ratio: 1/1;
     background: rgba(0,0,0, 0.6);
-    /* background: rgba(225,173,33,0.5); */
-    /* border: 3px solid var(--medGrey); */
     box-shadow: inset 0 0 5px 2px rgba(var(--primaryRGB), 0.5) ;
     border-radius: 20px;
     border: 1px solid var(--primary);
@@ -49,6 +47,10 @@ const Content = styled.div`
        border-radius: 20px;
        margin: 10px 0;
        padding: 10px;
+
+       :focus {
+           outline: 1px solid var(--primary);
+       } 
    }
 
    .error {

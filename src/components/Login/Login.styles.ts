@@ -22,6 +22,10 @@ const Wrapper = styled.div`
             :before {
                 content: '||| ';
             }
+
+            @media screen and (max-width: 500px) {
+                text-align: center;
+            }
         }
     }
     }
