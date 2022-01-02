@@ -12,15 +12,8 @@ import ActorCard from "./ActorCard";
 const Person: React.FC = () => {
     const { actorId, movieTitle, movieId }: any = useParams();
     const { state: person, loading, error }: any = usePersonFetch(actorId);
-    console.log(person);
-    console.log(error);
+    console.log(error)
 
-    if (person.credits) {
-        person.credits.forEach((a: any) => {
-            console.log(a)
-        })
-
-    }
     const imageUrl = `${IMAGE_BASE_URL}${PROFILE_SIZE}${person.profile_path}`;
 
     if (loading) return <Spinner />
