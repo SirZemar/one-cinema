@@ -9,21 +9,22 @@ type Props = {
     character: string | null;
     imageUrl: string;
     clickable: boolean;
+    hoverable: boolean;
     actorId: number;
     movieTitle: string;
     movieId: number;
 };
 
-const Actor: React.FC<Props> = ({ name, character, imageUrl, clickable, actorId, movieTitle, movieId }) => {
+const Actor: React.FC<Props> = ({ name, character, imageUrl, clickable, hoverable, actorId, movieTitle, movieId }) => {
 
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     const HandleMouseEnter = () => {
-        setIsMouseOver(true);
+        if (imageUrl !== '/static/media/no_image.22d2aa4d.jpg') setIsMouseOver(true);
     };
 
     const HandleMouseLeave = () => {
-        setIsMouseOver(false);
+        if (imageUrl !== '/static/media/no_image.22d2aa4d.jpg') setIsMouseOver(false);
     };
     return (
         <>
@@ -35,12 +36,17 @@ const Actor: React.FC<Props> = ({ name, character, imageUrl, clickable, actorId,
                         <p>{character}</p>
                     </Wrapper>
                 </Link> :
-                <Wrapper onMouseEnter={HandleMouseEnter} onMouseLeave={HandleMouseLeave} >
-                    <Image src={imageUrl} alt='actor-thumb' isMouseOver={isMouseOver} />
-                    <h3>{name}</h3>
-                    <p>{character}</p>
-                </Wrapper>
-
+                hoverable ?
+                    <Wrapper onMouseEnter={HandleMouseEnter} onMouseLeave={HandleMouseLeave} >
+                        <Image src={imageUrl} alt='actor-thumb' isMouseOver={isMouseOver} />
+                        <h3>{name}</h3>
+                        <p>{character}</p>
+                    </Wrapper> :
+                    <Wrapper >
+                        <Image src={imageUrl} alt='actor-thumb' isMouseOver={true} />
+                        <h3>{name}</h3>
+                        <p>{character}</p>
+                    </Wrapper>
             }
         </>
     )

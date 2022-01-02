@@ -44,6 +44,7 @@ const Movie: React.FC = () => {
                                 : NoImage
                         }
                         clickable
+                        hoverable
                         actorId={actor.id}
                         movieTitle={movie.original_title}
                         movieId={movieId}

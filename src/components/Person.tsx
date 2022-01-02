@@ -12,18 +12,22 @@ import ActorCard from "./ActorCard";
 const Person: React.FC = () => {
     const { actorId, movieTitle, movieId }: any = useParams();
     const { state: person, loading, error }: any = usePersonFetch(actorId);
-    console.log(person)
-    console.log(error)
+    console.log(person);
+    console.log(error);
 
+    if (person.credits) {
+        person.credits.forEach((a: any) => {
+            console.log(a)
+        })
+
+    }
     const imageUrl = `${IMAGE_BASE_URL}${PROFILE_SIZE}${person.profile_path}`;
 
     if (loading) return <Spinner />
     return (
         <>
             <BreadCrumb movieTitle={movieTitle} movieId={movieId} actor={person.name} actorId={actorId} />
-            {<ActorCard name={person.name} character={null} imageUrl={imageUrl} actorId={actorId} movieTitle={movieTitle} movieId={movieId} clickable={false}>
-                name, character, imageUrl, clickable, actorId, movieTitle, movieId
-            </ActorCard>}
+            {<ActorCard name={person.name} character={null} imageUrl={imageUrl} actorId={actorId} movieTitle={movieTitle} movieId={movieId} clickable={false} hoverable={false} />}
             <div style={{ maxWidth: 'var(--maxWidth)', margin: '0 auto' }}>
                 <h1 style={{ color: 'black' }}>Actor</h1>
                 <h1 style={{ color: 'black' }}>{actorId}</h1>
