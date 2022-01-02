@@ -14,7 +14,7 @@ export const useMovieFetch = (movieId: string) => {
     useEffect(() => {
 
         // Fetch from session
-        const sessionState = isPersistedState(`movie ${movieId}`);
+        const sessionState = isPersistedState(`movie${movieId}`);
         if (sessionState) {
             setState(sessionState);
             setLoading(false);
