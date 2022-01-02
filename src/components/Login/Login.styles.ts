@@ -4,7 +4,7 @@ const Wrapper = styled.div`
     flex-grow: 1;
     user-select: none;
     margin: 0 10px;
-    height: 100%;
+    height: 70%;
     margin-left: auto;
     max-width: 350px;
     
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 const Content = styled.div`
         display: flex;
         height: 100%;
-        padding-bottom: 10px;
+        justify-content: center;
 
         .container {
             height: 100%;
