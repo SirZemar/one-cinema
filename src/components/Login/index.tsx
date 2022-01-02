@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 // Styles
-import { Wrapper } from "./Login.styles";
+import { Wrapper, Content } from "./Login.styles";
 // Context
 import { Context } from '../../context';
 // Component
@@ -39,14 +39,23 @@ const LoginStatus: React.FC = () => {
 
     return (
         <Wrapper >
-            <div className="login-status" >
-                <div className="text" onClick={handleClick}> {user
-                    ? typeof (windowWidth) != 'number' ? null : windowWidth <= 500
-                        ? user.username
-                        : `Welcome ${user.username}`
-                    : 'Login'}
+            <Content className="login-status">
+                <div className="container" onClick={handleClick}>
+                    <div className="image-icon" >
+                        <div className="image-icon-head">
+                        </div>
+                        <div className="image-icon-body" >
+                        </div>
+                    </div>
+                    <div className="text"> {user
+                        ? typeof (windowWidth) != 'number' ? null : windowWidth <= 500
+                            ? user.username
+                            : `Welcome ${user.username}`
+                        : 'Login'}
+                    </div>
                 </div>
-            </div>
+            </Content>
+
             {state && <LoginBackground onClick={handleClick} state={state} setState={setState} />}
         </Wrapper>
     )
