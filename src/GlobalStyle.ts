@@ -43,17 +43,29 @@ body {
         font-size: 2rem;
         font-weight: 600;
         color:var(--white);
+
+        @media screen and (max-width: 768px){
+            font-size: var(--fontBig);
+        }
     }
 
     h2 {
         font-size: 1.5rem;
         font-weight: 600;
         color:var(--white);
+
+        @media screen and (max-width: 768px){
+            font-size: var(--fontMed);
+        }
     }
     h3 {
         font-size: 1.1rem;
         font-weight: 600;
         color:var(--white);
+
+        @media screen and (max-width: 768px){
+            font-size: var(--fontSmall);
+        }
     }
 
     p {
