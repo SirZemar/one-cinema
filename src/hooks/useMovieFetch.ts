@@ -10,7 +10,6 @@ export const useMovieFetch = (movieId: string) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
-
     useEffect(() => {
 
         // Fetch from session

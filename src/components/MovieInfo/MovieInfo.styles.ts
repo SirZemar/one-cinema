@@ -2,15 +2,15 @@ import styled from "styled-components";
 import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../../config";
 // Types
 type Props = {
-    backdrop:string;
+    backdrop: string;
 }
 
 const Wrapper = styled.div<Props>`
-    background: ${({backdrop}) => 
-        backdrop 
-        ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop})`
-        : '#000'
-        };
+    background: ${({ backdrop }) =>
+        backdrop
+            ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop})`
+            : '#000'
+    };
     background-size: cover;
     background-position: center;
     padding: 40px 20px;
