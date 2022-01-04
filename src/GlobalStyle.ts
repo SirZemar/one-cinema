@@ -26,15 +26,34 @@ body {
     margin: 0;
     padding: 0;
 
+        ::-webkit-scrollbar {
+        width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+        background: var(--darkGrey);
+        box-shadow: inset 0 0 5px #ddd; 
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary); 
+            border-radius: 15px;
+        }
+
     h1 {
         font-size: 2rem;
         font-weight: 600;
         color:var(--white);
     }
 
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color:var(--white);
+    }
     h3 {
         font-size: 1.1rem;
-        font-weight: 600px;
+        font-weight: 600;
+        color:var(--white);
     }
 
     p {
