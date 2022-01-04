@@ -11,12 +11,28 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.div`
+    display: flex;
+    justify-content: space-between;
     max-width: var(--maxWidth);
     margin: 0 auto;
     padding: 0 100px;
-    display: flex;
-    justify-content: space-between;
-    max-height: 600px;
+    animation: animatePersonInfo 0.8s;
+
+    @keyframes animatePersonInfo {
+        from {
+            opacity: 0
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+        flex-direction: column;
+        align-items:center;
+
+    }
 `;
 
 const Thumb = styled.div`
@@ -24,18 +40,18 @@ const Thumb = styled.div`
     border-radius: 20px;
     background-color: var(--darkGrey);
     background-image: url(${Beams});
-    background-size: 300% 150%;
+    background-size: 300% 200%;
     background-position: center -200px ;
  
     img {
         mix-blend-mode: overlay;
-        padding: 5px;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 20px;
         width: 100%;
+        height:100%;
         min-width: 300px;
         max-width: 400px;
+        padding: 5px;
+        object-fit: cover;
+        border-radius: 20px;
     } 
 
 `;
@@ -43,11 +59,12 @@ const Thumb = styled.div`
 const Text = styled.div`
     display:flex;
     flex-direction: column;
+    flex-basis: 100%;
+    max-width: 600px;
     padding: 20px 40px;
     background: rgba(0,0,0,0.7);
     border-radius: 20px;
-    max-width: 600px;
-    max-height: 100%;
+    max-height: 600px;
 
     h2 {
         margin-bottom: 0;
@@ -56,14 +73,16 @@ const Text = styled.div`
             content: '';
             display: block;
             height: 2px;
-            width: 300px;
+            max-width: 300px;
             background-color: var(--primary);
             margin-top: 20px;
         }
     }
     p {
+        padding-right: 10px;
         overflow: scroll;
         overflow-x: hidden; 
+        height: 30ch;
 
         ::-webkit-scrollbar {
         width: 5px;
