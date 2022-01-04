@@ -47,10 +47,22 @@ export type Cast = {
   id: number;
 }
 
+export type Crew = {
+  job: string;
+  name: string;
+  credit_id: number;
+}
+
+export type Credits = {
+  id: number;
+  cast: Cast[];
+  crew: Crew[];
+}
+
 export type Person = {
   name: string;
   birthday: string;
-  deathday: string | null;
+  deathday: string;
   biography: string;
   place_of_birth: string | null;
   homepage: null | string;
@@ -63,18 +75,17 @@ export type PersonCredits = {
 
 export type PersonCast = {
   original_title: string;
-}
-
-export type Crew = {
-  job: string;
-  name: string;
-  credit_id: number;
-}
-
-export type Credits = {
   id: number;
-  cast: Cast[];
-  crew: Crew[];
+  poster_path: string;
+}
+
+export type PersonImages = {
+  profiles: PersonProfiles[];
+}
+
+export type PersonProfiles = {
+  width: number;
+  file_path: string;
 }
 
 const apiSettings = {
@@ -98,6 +109,10 @@ const apiSettings = {
   },
   fetchPersonCredits: async (actorId: string): Promise<PersonCredits> => {
     const endpoint: string = `${API_URL}person/${actorId}/movie_credits?api_key=${API_KEY}&language=en-US`;
+    return await (await (await fetch(endpoint)).json());
+  },
+  fetchPersonImages: async (actorId: string): Promise<PersonImages> => {
+    const endpoint: string = `${API_URL}person/${actorId}/images?api_key=${API_KEY}`;
     return await (await (await fetch(endpoint)).json());
   },
   // Bonus material below for login
