@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Components 
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import Movie from './components/Movie';
 import Person from './components/Person';
@@ -22,6 +23,7 @@ const App: React.FC = () => (
         <Route path='/actor/:movieTitle/:movieId/:actorId' element={<Person />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
+      <Footer />
       <GlobalStyle />
     </UserProvider>
   </Router>
