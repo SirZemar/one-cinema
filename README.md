@@ -1,6 +1,8 @@
 <h1> One Cinema </h1>
 <h3> React/typescript streaming website </h2>
 
+![onecinema-preview](https://user-images.githubusercontent.com/87383586/149380024-3315d7ca-88a1-407f-8cef-7204947d4214.png)
+
 <h2> Introduction </h2>
 <p> My first real project where I could tackle the exciting React library as well apply basic knowledge of typescript.</p>
 <p> 
