@@ -25,7 +25,7 @@ const Person: React.FC = () => {
 
     return (
         <>
-            {actorId && movieTitle && movieId && <BreadCrumb movieTitle={movieTitle} movieId={movieId} actor={person.name} actorId={actorId} />}
+            <BreadCrumb movieTitle={movieTitle} movieId={movieId} actor={person.name} actorId={actorId} />
             <PersonInfo person={person} imageUrl={imageUrl} />
             <Grid header='Movies'>
                 {person.credits && person.credits.map(movie => (

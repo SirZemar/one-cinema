@@ -25,7 +25,7 @@ const MovieInfo: React.FC<Props> = ({ movie }) => (
                 clickable={false}
             />
             <Text>
-                <h1>{movie.title}<span> ({movie.release_date.slice(0,4)})</span></h1>
+                <h1>{movie.title}<span> ({movie.release_date.slice(0, 4)})</span></h1>
                 <h3>PLOT</h3>
                 <p>{movie.overview}</p>
 
@@ -38,7 +38,7 @@ const MovieInfo: React.FC<Props> = ({ movie }) => (
                         <h3>DIRECTOR{movie.directors.length > 1 ? 'S' : ''}</h3>
                         {movie.directors.map(director => (
                             <p key={director.credit_id}>{director.name}</p>
-                            ))}
+                        ))}
                     </div>
                 </div>
 
