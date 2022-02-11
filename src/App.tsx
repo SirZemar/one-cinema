@@ -12,21 +12,29 @@ import NotFound from './components/NotFound';
 import UserProvider from './context';
 // Styles
 import { GlobalStyle } from './GlobalStyle';
+import { ThemeProvider } from 'styled-components';
+// Style Config
+import { dimensions } from './dimensionsConfig';
 
-const App: React.FC = () => (
-  <Router>
-    <UserProvider>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/:movieId' element={<Movie />} />
-        <Route path='/actor/:movieTitle/:movieId/:actorId' element={<Person />} />
-        <Route path='/*' element={<NotFound />} />
-      </Routes>
-      <Footer />
-      <GlobalStyle />
-    </UserProvider>
-  </Router>
-);
+const App: React.FC = () => {
+
+  return (
+    <Router>
+      <ThemeProvider theme={dimensions}>
+        <UserProvider>
+          <GlobalStyle />
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/:movieId' element={<Movie />} />
+            <Route path='/actor/:movieTitle/:movieId/:actorId' element={<Person />} />
+            <Route path='/*' element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </UserProvider>
+      </ThemeProvider>
+    </Router>
+  )
+};
 
 export default App;
