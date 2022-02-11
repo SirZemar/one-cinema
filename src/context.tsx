@@ -5,9 +5,14 @@ export type GlobalContent = {
     setState: (c: string) => void
 }
 
+export type Loading = {
+    loading: boolean,
+    setLoading: (c: boolean) => void
+}
+
 export const Context: any = createContext<GlobalContent>({ state: '', setState: c => { } });
 
-const UserProvider: React.FC = ({ children }) => {
+export const UserProvider: React.FC = ({ children }) => {
     const [state, setState] = useState(undefined);
 
     return (
@@ -15,4 +20,14 @@ const UserProvider: React.FC = ({ children }) => {
     )
 };
 
-export default UserProvider;
+export const LoadingContext: any = createContext<Loading>({ loading: false, setLoading: c => { } });
+
+export const LoadingProvider: React.FC = ({ children }) => {
+    const [loading, setLoading] = useState(false)
+
+    return (
+        <LoadingContext.Provider value={[loading, setLoading]}>{children}</LoadingContext.Provider>
+    )
+}
+
+// export default UserProvider;

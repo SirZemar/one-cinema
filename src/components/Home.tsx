@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 // Config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 
@@ -14,6 +14,7 @@ import { useHomeFetch } from '../hooks/useHomeFetch';
 
 // Image
 import NoImage from '../images/no_image.jpg';
+import { LoadingContext } from '../context';
 
 const Home: React.FC = () => {
     const {
@@ -25,9 +26,18 @@ const Home: React.FC = () => {
         setIsLoadingMore
     } = useHomeFetch();
 
+    const [_loadingGlobal, setLoadingGlobal] = useContext(LoadingContext)
+
+    useEffect(() => {
+        setLoadingGlobal(loading)
+    }, [loading, setLoadingGlobal])
+
     const firstResult = state.results[0];
 
     if (error) return <div>Something went wrong...</div>;
+
+    // To avoid warnings ***
+    false ? console.log(_loadingGlobal) : console.log();
 
     return (
         <>

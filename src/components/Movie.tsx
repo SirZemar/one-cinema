@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 // Config
 import { IMAGE_BASE_URL, PROFILE_SIZE } from "../config";
@@ -11,17 +11,27 @@ import MovieInfoBar from "./MovieInfoBar";
 import Actor from "./ActorCard";
 // Hook
 import { useMovieFetch } from "../hooks/useMovieFetch";
-
 // Image
 import NoImage from '../images/no_image.jpg';
+// Context
+import { LoadingContext } from "../context";
 
 const Movie: React.FC = () => {
     const { movieId }: any = useParams();
 
     const { state: movie, loading, error } = useMovieFetch(movieId);
 
+    const [_loadingGlobal, setLoadingGlobal] = useContext(LoadingContext);
+
+    useEffect(() => {
+        setLoadingGlobal(loading)
+    }, [loading, setLoadingGlobal])
+
     if (loading) return <Spinner />
     if (error) return <div>Something went wrong...</div>
+
+    // To avoid warnings ***
+    false ? console.log(_loadingGlobal) : console.log();
 
     return (
         <>

@@ -7,9 +7,9 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
     max-width: var(--maxWidth);
-    margin: 0 auto;
+    margin: 0px auto;
     padding: 20px 0;
-
+    margin-top: 20px;
     p {
         text-align: right;
         margin: 0;
