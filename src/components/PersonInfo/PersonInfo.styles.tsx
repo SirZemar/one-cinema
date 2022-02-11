@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Lights from "../../images/lights.png"
 import Beams from "../../images/beam-lights.png"
 import Stage from "../../images/light-dark.jpg"
+// Helpers
+import { clamp } from "../../helpers";
 
 const Wrapper = styled.div`
     padding: 40px 20px ;
@@ -66,8 +68,12 @@ const Text = styled.div`
     border-radius: 20px;
     max-height: 600px;
 
+    h1 {
+        color:red;
+    }
     h2 {
         margin-bottom: 0;
+        font-size: ${({ theme }) => clamp(theme.size.med, theme.size.big, theme.break.M, { endQuery: theme.break.XL })};
 
         ::after {
             content: '';

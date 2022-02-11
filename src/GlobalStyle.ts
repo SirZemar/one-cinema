@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+// Helpers
+import { clamp } from "./helpers";
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<any>`
 :root {
     --maxWidth: 1280px;
     --white: #fff;
@@ -11,10 +13,6 @@ export const GlobalStyle = createGlobalStyle`
     --darkGreyRGB: 28,28,28;
     --primary: #e1ad21;
     --primaryRGB: 225,173,33;
-    --fontSuperBig: 2.5rem;
-    --fontBig: 1.5rem;
-    --fontMed: 1.2rem;
-    --fontSmall: 1rem;
 }
 
 * {
@@ -40,37 +38,28 @@ body {
         }
 
     h1 {
-        font-size: 2rem;
         font-weight: 600;
         color:var(--white);
-
-        @media screen and (max-width: 768px){
-            font-size: var(--fontBig);
-        }
+        font-size: ${({ theme }) => clamp(theme.size.bigger, theme.size.biggest, theme.break.L, { endQuery: theme.break.breakXL })}
     }
 
     h2 {
         font-size: 1.5rem;
         font-weight: 600;
         color:var(--white);
+        font-size: ${({ theme }) => clamp(theme.size.big, theme.size.bigger, theme.break.L, { rate: 1 })};
 
-        @media screen and (max-width: 768px){
-            font-size: var(--fontMed);
-        }
     }
     h3 {
         font-size: 1.1rem;
         font-weight: 600;
         color:var(--white);
-
-        @media screen and (max-width: 768px){
-            font-size: var(--fontSmall);
-        }
+        font-size: ${({ theme }) => clamp(theme.size.small, theme.size.med, theme.break.M, { endQuery: theme.break.breakXL })};
     }
 
     p {
-        font-size: 1rem;
         color: var(--white);
+        font-size: ${({ theme }) => clamp(theme.size.small, theme.size.med, theme.break.L, { endQuery: theme.break.breakXL })}
     }
 }
 `
