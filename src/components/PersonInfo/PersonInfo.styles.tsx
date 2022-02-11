@@ -69,7 +69,7 @@ const Text = styled.div`
     max-height: 600px;
 
     h1 {
-        color:red;
+        color:var(--primary);
     }
     h2 {
         margin-bottom: 0;
