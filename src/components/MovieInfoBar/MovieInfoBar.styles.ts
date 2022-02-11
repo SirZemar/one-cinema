@@ -1,4 +1,6 @@
 import styled from "styled-components";
+// Helpers
+import { clamp } from "../../helpers";
 
 const Wrapper = styled.div`
     display: flex;
@@ -10,6 +12,8 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
     display: flex;
+    justify-content: space-between;
+    gap: ${({ theme }) => clamp(theme.size.smallest, theme.size.biggest, theme.break.S, { rate: 2 })};
     max-width: var(--maxWidth);
     width: 100%;
     margin: 0 auto;
@@ -19,25 +23,10 @@ const Content = styled.div`
         align-items: center;
         justify-content: center;
         background: var(--medGrey);
+        text-align: center;
         border-radius: 20px;
-        margin: 0 20px;
         flex:1;
-        
-        :first-child {
-            margin-left: 0;
-        }
-        
-        :last-child {
-            margin-right: 0;
-        }
-    }
-
-    @media screen and(max-width: 768px) {
-        display: block;
-
-        .column {
-            margin: 20px 0;
-        }
+        min-width: 50px;
     }
 `;
 
