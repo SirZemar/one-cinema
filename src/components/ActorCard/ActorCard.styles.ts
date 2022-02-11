@@ -10,10 +10,8 @@ const Wrapper = styled.div`
     border-radius: 20px;
     padding: 5px;
     text-align: center;
-    height: 280px;
     overflow: hidden;
-    max-Width: 200px;
-
+    height: 100%;
     h3 {
         margin: 10px 0 0 0;
     }
@@ -32,7 +30,7 @@ const Image = styled.img<Props>`
     transition: 0.2s;
     height: ${({ isMouseOver }) => isMouseOver
         ? '100%'
-        : '200px'
+        : '80%'
     };
     object-position:  ${({ isMouseOver }) => isMouseOver
         ? 'top'
