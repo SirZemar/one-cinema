@@ -10,14 +10,6 @@ const Wrapper = styled.div`
     padding: 40px 20px ;
     background-image: url(${Lights}), url(${Stage});
     background-size: contain, cover;
-`;
-
-const Content = styled.div`
-    display: flex;
-    justify-content: space-between;
-    max-width: var(--maxWidth);
-    margin: 0 auto;
-    padding: 0 100px;
     animation: animatePersonInfo 0.8s;
 
     @keyframes animatePersonInfo {
@@ -28,12 +20,19 @@ const Content = styled.div`
             opacity: 1;
         }
     }
+`;
 
+const Content = styled.div`
+    display: flex;
+    justify-content: space-between;
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    padding: 0 100px;
+   
     @media screen and (max-width: 768px) {
         padding: 0;
         flex-direction: column;
         align-items:center;
-
     }
 `;
 
