@@ -49,3 +49,48 @@ export const calculateAge = (birth: string, death: string, isDead: boolean) => {
   const timeDifference = lastDate - birthDay;
   return new Date(timeDifference).getUTCFullYear() - 1970;
 }
+
+export const clamp = (smaller: string, bigger: string, startQueryStr: string, optionsSettings = {}): string => {
+  const optionsDefault = {
+    rate: 0,
+    endQuery: undefined,
+    inverse: false,
+  };
+  const options = Object.assign(optionsDefault, optionsSettings);
+  const { rate, endQuery: endQueryStr, inverse } = options;
+
+  let value;
+  let b, invertedB;
+  let startQuery = parseInt(startQueryStr);
+
+  const minSize = parseFloat(smaller);
+  const maxSize = parseFloat(bigger);
+
+  // rem Only for now
+  const minSizePx = minSize * 16;
+  const maxSizePx = maxSize * 16;
+
+  if (endQueryStr) {
+    let endQuery = parseInt(endQueryStr);
+
+    if (inverse) {
+      [startQuery, endQuery] = [endQuery, startQuery]
+    }
+
+    const sizeDiff = maxSizePx - minSizePx;
+    const queryDiff = endQuery - startQuery;
+
+    value = (sizeDiff / queryDiff) * 100;
+    b = minSizePx - ((value / 100) * startQuery);
+
+    return (`clamp(${smaller}, ${value}vw + ${b}px , ${bigger})`)
+  }
+
+  b = rate * 16;
+  value = ((minSizePx + b) / startQuery) * 100;
+  invertedB = minSizePx - ((-value / 100) * startQuery);
+
+  return inverse
+    ? (`clamp(${smaller}, -${value}vw + ${invertedB}px, ${bigger})`)
+    : (`clamp(${smaller}, ${value}vw - ${b}px , ${bigger})`)
+}
