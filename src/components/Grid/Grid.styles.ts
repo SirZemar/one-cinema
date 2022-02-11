@@ -1,6 +1,4 @@
 import styled from "styled-components";
-//helpers
-import { clamp } from "../../helpers";
 
 const Wrapper = styled.div`
     max-width: var(--maxWidth);
