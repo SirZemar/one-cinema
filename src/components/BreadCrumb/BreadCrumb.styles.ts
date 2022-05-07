@@ -20,6 +20,8 @@ const Content = styled.div`
     width: 100%;
     padding: 0 20px;
     max-width: var(--maxWidth);
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
 
     a:not(:first-child) {
         span:not(.empty):before {
