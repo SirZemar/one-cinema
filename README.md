@@ -1,4 +1,4 @@
-<h1><name> One Cinemass </name></h1>
+<h1><name> One Cinema </name></h1>
 
 <h3> React/typescript streaming website </h2>
 
