@@ -1,4 +1,5 @@
-<h1> One Cinema </h1>
+<h1><name> One Cinema </name></h1>
+
 <h3> React/typescript streaming website </h2>
 
 ![onecinema-preview](https://user-images.githubusercontent.com/87383586/149380024-3315d7ca-88a1-407f-8cef-7204947d4214.png)
