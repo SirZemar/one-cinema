@@ -2,7 +2,7 @@
 
 <h3> React/typescript streaming website </h2>
 
-![<image>https://user-images.githubusercontent.com/87383586/149380024-3315d7ca-88a1-407f-8cef-7204947d4214.png</image>](
+![<image>https://user-images.githubusercontent.com/87383586/218098635-aa1fff33-a59a-459b-ae93-28ec42b536cd.png</image>](
 https://user-images.githubusercontent.com/87383586/218098635-aa1fff33-a59a-459b-ae93-28ec42b536cd.png)
 
 <h2> Introduction </h2>
