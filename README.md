@@ -1,5 +1,5 @@
 <h1><name>One Cinema</name></h1>
-<h2> React/typescript streaming website </h2>
+<h3> React/typescript streaming website </h3>
 
 ![<logo>https://user-images.githubusercontent.com/87383586/219822058-8b8e4605-d1a0-4cfe-bf86-cb6df1ed059f.png</logo>](https://user-images.githubusercontent.com/87383586/219822058-8b8e4605-d1a0-4cfe-bf86-cb6df1ed059f.png)
 
