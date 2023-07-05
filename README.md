@@ -17,5 +17,6 @@ https://user-images.githubusercontent.com/87383586/218098635-aa1fff33-a59a-459b-
 <hr>
 Access this project <a href="https://pedantic-northcutt-1aa55c.netlify.app" target="_blank" website="<website>https://pedantic-northcutt-1aa55c.netlify.app</website>" >Here</a>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/341e0421-ed1f-44b5-84d4-dbd3b9badac3/deploy-status)](https://app.netlify.com/sites/onecinema-live/deploys)
 
 <!-- ![one-cinema-hero](https://user-images.githubusercontent.com/87383586/149380024-3315d7ca-88a1-407f-8cef-7204947d4214.png) -->
